@@ -21,6 +21,7 @@ public class LetterboxdTests extends TestBase {
         String expectedHeadingText = "FOUND AT LEAST 250 MATCHES FOR “LORD OF THE RINGS”";
 
         letterboxdHomePage.openHomePage();
+        letterboxdHomePage.consentAgreement();
         letterboxdHomePage.searchForMovie(searchTerm);
         letterboxdHomePage.verifySearchResultsHeading(expectedHeadingText);
     }
