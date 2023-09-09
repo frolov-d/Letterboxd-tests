@@ -2,7 +2,7 @@ package com.jsd.letterboxd;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.jsd.letterboxd.helpers.Attach;
+import com.jsd.letterboxd.helpers.Attachments;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,11 +17,15 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://letterboxd.com";
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "100.0";
+        String[] browserWithVersion = System.getProperty("browserWithVersion", "chrome:100.0")
+                .split(":");
+        Configuration.browser = browserWithVersion[0];
+        Configuration.browserVersion = browserWithVersion[1];
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://letterboxd.com");
+        Configuration.remote = "https://user1:1234@" +
+                               System.getProperty("selenoidUrl", "selenoid.autotests.cloud/wd/hub");
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -39,9 +43,9 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
+        Attachments.screenshotAs("Last screenshot");
+        Attachments.pageSource();
+        Attachments.browserConsoleLogs();
+        Attachments.addVideo();
     }
 }
