@@ -40,3 +40,9 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
 }
+
+task local(type: Test) {
+    useJUnitPlatform {
+        includeTags("web")
+    }
+}
