@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
 public interface WebDriverConfig extends Config {
 
     @Key("browserWithVersion")
-    @DefaultValue("chrome,116.0")
+    @DefaultValue("chrome,110.0")
     String[] getBrowserAndVersion();
 
     @Key("browser_size")
