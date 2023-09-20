@@ -16,7 +16,7 @@ public interface WebDriverConfig extends Config {
     String getBrowserSize();
 
     @Key("base_url")
-    @DefaultValue("https://letterboxd.com")
+    @DefaultValue("https://www.saucedemo.com")
     String getBaseUrl();
 
     @Key("selenoid")

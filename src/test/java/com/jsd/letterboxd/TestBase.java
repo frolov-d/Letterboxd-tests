@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class TestBase {
 
-    LetterboxdHomePage letterboxdHomePage = new LetterboxdHomePage();
+    SwagLabsHomePage swagLabsHomePage = new SwagLabsHomePage();
 
     @BeforeAll
     static void config() {

@@ -13,6 +13,7 @@ public class WebDriverProvider {
 
     public static void config() {
         String[] browserWithVersion = WebDriverProvider.config.getBrowserAndVersion();
+//        Configuration.holdBrowserOpen = true;
         Configuration.browser = browserWithVersion[0];
         Configuration.browserVersion = browserWithVersion[1];
         Configuration.browserSize = WebDriverProvider.config.getBrowserSize();
