@@ -11,14 +11,26 @@ import org.junit.jupiter.api.Test;
 @Tag("web")
 public class SwagLabsTests extends TestBase {
 
-    @Test
     @Feature("Web tests")
-    @DisplayName("Search test")
+    @DisplayName("Login test")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.CRITICAL)
+    @Test
     void loginTest() {
         swagLabsHomePage.openLoginPage();
         swagLabsHomePage.credentialsEntering();
         swagLabsHomePage.loginVerifying();
+    }
+
+    @Feature("Web tests")
+    @DisplayName("Logout test")
+    @Owner("Dmitry F")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test
+    void logoutTest() {
+        swagLabsHomePage.openLoginPage();
+        swagLabsHomePage.credentialsEntering();
+        swagLabsHomePage.logout();
+        swagLabsHomePage.logoutVerifying();
     }
 }
