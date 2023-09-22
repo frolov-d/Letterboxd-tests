@@ -1,4 +1,4 @@
-package com.jsd.letterboxd;
+package com.jsd.letterboxd.Tests;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -17,7 +17,7 @@ public class InventoryTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void addToCartFromDescription() {
-        swagLabsLoginPage.enterCredentials();
+        loginPage.enterCredentials();
         inventoryPage.addBackpackToTheCart();
         inventoryPage.verifyButtonNameChange();
         inventoryPage.verifyShoppingCartBadge();

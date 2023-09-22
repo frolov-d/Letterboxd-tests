@@ -1,4 +1,4 @@
-package com.jsd.letterboxd;
+package com.jsd.letterboxd.Tests;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -17,9 +17,9 @@ public class AuthorizationTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void loginTest() {
-        swagLabsLoginPage.openLoginPage();
-        swagLabsLoginPage.enterCredentials();
-        swagLabsLoginPage.loginVerifying();
+        loginPage.openLoginPage();
+        loginPage.enterCredentials();
+        loginPage.loginVerifying();
     }
 
     @Feature("Web tests")
@@ -28,9 +28,9 @@ public class AuthorizationTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void logoutTest() {
-        swagLabsLoginPage.openLoginPage();
-        swagLabsLoginPage.enterCredentials();
-        swagLabsLoginPage.logout();
-        swagLabsLoginPage.logoutVerifying();
+        loginPage.openLoginPage();
+        loginPage.enterCredentials();
+        loginPage.logout();
+        loginPage.logoutVerifying();
     }
 }
