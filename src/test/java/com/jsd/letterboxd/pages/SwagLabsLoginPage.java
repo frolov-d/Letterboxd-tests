@@ -1,4 +1,4 @@
-package com.jsd.letterboxd;
+package com.jsd.letterboxd.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class SwagLabsHomePage {
+public class SwagLabsLoginPage {
 
     private SelenideElement usernameField = $("#user-name");
     private SelenideElement passwordField = $("#password");
@@ -23,7 +23,7 @@ public class SwagLabsHomePage {
     }
 
     @Step("Entering valid credentials")
-    public void credentialsEntering() {
+    public void enterCredentials() {
         usernameField.setValue("standard_user");
         passwordField.setValue("secret_sauce");
         loginButton.click();

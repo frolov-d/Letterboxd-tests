@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 @Tag("web")
-public class SwagLabsTests extends TestBase {
+public class AuthorizationTests extends TestBase {
 
     @Feature("Web tests")
     @DisplayName("Login test")
@@ -17,9 +17,9 @@ public class SwagLabsTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void loginTest() {
-        swagLabsHomePage.openLoginPage();
-        swagLabsHomePage.credentialsEntering();
-        swagLabsHomePage.loginVerifying();
+        swagLabsLoginPage.openLoginPage();
+        swagLabsLoginPage.enterCredentials();
+        swagLabsLoginPage.loginVerifying();
     }
 
     @Feature("Web tests")
@@ -28,9 +28,9 @@ public class SwagLabsTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void logoutTest() {
-        swagLabsHomePage.openLoginPage();
-        swagLabsHomePage.credentialsEntering();
-        swagLabsHomePage.logout();
-        swagLabsHomePage.logoutVerifying();
+        swagLabsLoginPage.openLoginPage();
+        swagLabsLoginPage.enterCredentials();
+        swagLabsLoginPage.logout();
+        swagLabsLoginPage.logoutVerifying();
     }
 }
