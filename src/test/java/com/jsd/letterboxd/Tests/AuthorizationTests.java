@@ -33,4 +33,13 @@ public class AuthorizationTests extends TestBase {
         loginPage.logout();
         loginPage.logoutVerifying();
     }
+
+    @Feature("Web tests")
+    @DisplayName("Incorrect password test")
+    @Owner("Dmitry F")
+    @Severity(SeverityLevel.CRITICAL)
+    @Test
+    void enterIncorrectPassword() {
+        loginPage.enterIncorrectPassword();
+    }
 }

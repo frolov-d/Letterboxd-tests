@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 
 public class LoginPage {
 
@@ -16,6 +17,7 @@ public class LoginPage {
     private SelenideElement burgerMenu = $("#react-burger-menu-btn");
     private SelenideElement logoutLink = $("#logout_sidebar_link");
     private SelenideElement loginLogo = $(".login_logo");
+    private SelenideElement errorMessage = $("div.error-message-container");
 
     @Step("Logging in to the site")
     public void openLoginPage() {
@@ -44,5 +46,17 @@ public class LoginPage {
     public void logoutVerifying() {
         loginLogo.shouldHave(text("Swag Labs"));
         loginButton.exists();
+    }
+
+    @Step("Verifying error message with incorrect password entered")
+    public void enterIncorrectPassword() {
+        step("Entering valid login", () ->
+                usernameField.setValue("standard_user"));
+        step("Entering invalid password", () ->
+                passwordField.setValue("incorrect_value"));
+        step("Clicking on the Login button", () ->
+                loginButton.click());
+        step("Verifying error message", () ->
+                errorMessage.shouldHave(text("Epic sadface")));
     }
 }
