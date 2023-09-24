@@ -14,12 +14,30 @@ public class InventoryTests extends TestBase {
     @Feature("Web tests")
     @DisplayName("Inventory tests")
     @Owner("Dmitry F")
-    @Severity(SeverityLevel.CRITICAL)
+    @Severity(SeverityLevel.BLOCKER)
     @Test
     void addToCartFromDescription() {
+        loginPage.openLoginPage();
         loginPage.enterCredentials();
         inventoryPage.addBackpackToTheCart();
         inventoryPage.verifyButtonNameChange();
-        inventoryPage.verifyShoppingCartBadge();
+        inventoryPage.verifyShoppingCartBadge("1");
+        inventoryPage.removeBackpack();
+    }
+
+    @Feature("Web tests")
+    @DisplayName("Shopping Cart Counter test")
+    @Owner("Dmitry F")
+    @Severity(SeverityLevel.BLOCKER)
+    @Test
+    void verifyShoppingCartIncreaseCounter() {
+        loginPage.openLoginPage();
+        loginPage.enterCredentials();
+        inventoryPage.addBikeLightToTheCart();
+        inventoryPage.verifyShoppingCartBadge("1");
+        inventoryPage.addBoltTShirtToTheCart();
+        inventoryPage.verifyShoppingCartBadge("2");
+        inventoryPage.addJacketToTheCart();
+        inventoryPage.verifyShoppingCartBadge("3");
     }
 }

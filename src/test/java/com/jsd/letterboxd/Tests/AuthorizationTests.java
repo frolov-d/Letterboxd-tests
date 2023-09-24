@@ -40,6 +40,7 @@ public class AuthorizationTests extends TestBase {
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void enterIncorrectPassword() {
+        loginPage.openLoginPage();
         loginPage.enterIncorrectPassword();
     }
 }

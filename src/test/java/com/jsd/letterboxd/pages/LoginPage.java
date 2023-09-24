@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
@@ -45,7 +46,7 @@ public class LoginPage {
     @Step("Verifying logout")
     public void logoutVerifying() {
         loginLogo.shouldHave(text("Swag Labs"));
-        loginButton.exists();
+        loginButton.shouldBe(visible);
     }
 
     @Step("Verifying error message with incorrect password entered")
