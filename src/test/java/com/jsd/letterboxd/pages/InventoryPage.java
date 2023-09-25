@@ -4,7 +4,12 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.jsd.letterboxd.helpers.Utils.areItemsInReverseAlphabeticalOrder;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class InventoryPage {
 
@@ -23,6 +28,8 @@ public class InventoryPage {
     private SelenideElement backpackRemoveFromCartButton = $("#remove-sauce-labs-backpack");
     private SelenideElement cartBadge = $(".shopping_cart_badge");
     private SelenideElement backToProductsButton = $("#back-to-products");
+    private SelenideElement sortingButton = $(".product_sort_container");
+    private List<SelenideElement> itemNames = $$(".inventory_item_name");
 
     @Step("Adding a Sauce Labs Backpack to the cart")
     public void addBackpackToTheCart() {
@@ -63,5 +70,21 @@ public class InventoryPage {
     @Step("Removing a Backpack from the cart")
     public void removeBackpack() {
         backpackRemoveFromCartButton.click();
+    }
+
+    @Step("Clicking on the Sort button")
+    public void sort() {
+        sortingButton.click();
+    }
+
+    @Step("Setting reverse alphabetizing sorting")
+    public void reverseAlphabetizingSort() {
+        sortingButton.selectOptionByValue("za");
+    }
+
+    @Step("Verifying setting reverse alphabetical order")
+    public void verifyReverseAlphabeticalOrder() {
+        boolean result = areItemsInReverseAlphabeticalOrder(itemNames);
+        assertTrue(result, "The list is in reverse alphabetical order");
     }
 }

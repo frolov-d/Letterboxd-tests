@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 @Tag("web")
 public class InventoryTests extends TestBase {
 
-    @Feature("Web tests")
+    @Feature("Shopping Cart")
     @DisplayName("Inventory tests")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.BLOCKER)
@@ -25,8 +25,8 @@ public class InventoryTests extends TestBase {
         inventoryPage.removeBackpack();
     }
 
-    @Feature("Web tests")
-    @DisplayName("Shopping Cart Counter test")
+    @Feature("Shopping Cart")
+    @DisplayName("Shopping Cart counter test")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.BLOCKER)
     @Test
@@ -39,5 +39,17 @@ public class InventoryTests extends TestBase {
         inventoryPage.verifyShoppingCartBadge("2");
         inventoryPage.addJacketToTheCart();
         inventoryPage.verifyShoppingCartBadge("3");
+    }
+
+    @Feature("Items sorting")
+    @DisplayName("Sorting in reverse alphabetical order")
+    @Owner("Dmitry F")
+    @Severity(SeverityLevel.MINOR)
+    @Test
+    void verifyReverseAlphabetizingSorting() {
+        loginPage.openLoginPage();
+        loginPage.enterCredentials();
+        inventoryPage.reverseAlphabetizingSort();
+        inventoryPage.verifyReverseAlphabeticalOrder();
     }
 }

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 @Tag("web")
 public class AuthorizationTests extends TestBase {
 
-    @Feature("Web tests")
+    @Feature("Authorization")
     @DisplayName("Login test")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.CRITICAL)
@@ -22,7 +22,7 @@ public class AuthorizationTests extends TestBase {
         loginPage.loginVerifying();
     }
 
-    @Feature("Web tests")
+    @Feature("Authorization")
     @DisplayName("Logout test")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.CRITICAL)
@@ -34,7 +34,7 @@ public class AuthorizationTests extends TestBase {
         loginPage.logoutVerifying();
     }
 
-    @Feature("Web tests")
+    @Feature("Authorization")
     @DisplayName("Incorrect password test")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.CRITICAL)
