@@ -27,6 +27,7 @@ public class InventoryPage {
 //    private SelenideElement redTShirtAddToCartButton = $("#add-to-cart-test.allthethings()-t-shirt-(red)");
     private SelenideElement backpackRemoveFromCartButton = $("#remove-sauce-labs-backpack");
     private SelenideElement cartBadge = $(".shopping_cart_badge");
+    private SelenideElement shoppingCart = $("#shopping_cart_container");
     private SelenideElement backToProductsButton = $("#back-to-products");
     private SelenideElement sortingButton = $(".product_sort_container");
     private List<SelenideElement> itemNames = $$(".inventory_item_name");
@@ -86,5 +87,10 @@ public class InventoryPage {
     public void verifyReverseAlphabeticalOrder() {
         boolean result = areItemsInReverseAlphabeticalOrder(itemNames);
         assertTrue(result, "The list is in reverse alphabetical order");
+    }
+
+    @Step("Clicking on the Cart button")
+    public void clickOnTheCartButton() {
+        shoppingCart.click();
     }
 }

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 @Tag("web")
 public class InventoryTests extends TestBase {
 
-    @Feature("Shopping Cart")
+    @Feature("Inventory")
     @DisplayName("Inventory tests")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.BLOCKER)
@@ -25,7 +25,7 @@ public class InventoryTests extends TestBase {
         inventoryPage.removeBackpack();
     }
 
-    @Feature("Shopping Cart")
+    @Feature("Inventory")
     @DisplayName("Shopping Cart counter test")
     @Owner("Dmitry F")
     @Severity(SeverityLevel.BLOCKER)
