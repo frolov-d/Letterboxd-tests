@@ -1,6 +1,8 @@
 package com.jsd.letterboxd.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.jsd.letterboxd.helpers.RandomCustomerGenerator;
+import com.jsd.letterboxd.models.Customer;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
@@ -8,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ShoppingCartPage {
 
+    Customer newCustomer = RandomCustomerGenerator.getRandomCustomer();
     private SelenideElement cartList = $(".cart_list .inventory_item_name");
     private SelenideElement checkoutButton = $("#checkout");
     private SelenideElement firstNameField = $("#first-name");
@@ -30,9 +33,9 @@ public class ShoppingCartPage {
 
     @Step("Entering customer data")
     public void enterCustomerData() {
-        firstNameField.setValue("First");
-        lastNameField.setValue("Last");
-        zipCodeField.setValue("456910"); // todo add Faker
+        firstNameField.setValue(newCustomer.getFirstName());
+        lastNameField.setValue(newCustomer.getLastName());
+        zipCodeField.setValue(newCustomer.getZipCode());
     }
 
     @Step("Clicking on the Continue button")

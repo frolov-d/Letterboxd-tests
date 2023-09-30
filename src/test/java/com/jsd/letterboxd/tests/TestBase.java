@@ -1,4 +1,4 @@
-package com.jsd.letterboxd.Tests;
+package com.jsd.letterboxd.tests;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;

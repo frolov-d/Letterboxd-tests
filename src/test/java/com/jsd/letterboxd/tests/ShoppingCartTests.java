@@ -1,4 +1,4 @@
-package com.jsd.letterboxd.Tests;
+package com.jsd.letterboxd.tests;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
