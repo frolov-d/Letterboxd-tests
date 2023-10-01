@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ShoppingCartPage {
 
-    Customer newCustomer = RandomCustomerGenerator.getRandomCustomer();
+    private Customer newCustomer = RandomCustomerGenerator.getRandomCustomer();
     private SelenideElement cartList = $(".cart_list .inventory_item_name");
     private SelenideElement checkoutButton = $("#checkout");
     private SelenideElement firstNameField = $("#first-name");
