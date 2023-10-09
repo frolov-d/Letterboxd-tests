@@ -13,10 +13,10 @@
 - [Property files](#property-files)
 - [Running tests in Jenkins](#running-tests-in-jenkins)
 - [Test results report in Allure Report](#test-results-report-in-allure-report)
-- [Integration with Allure TestOps](#-integration-with-allure-testops)
-- [Integration with Jira](#-integration-with-jira)
-- [Integration with Telegram](#-telegram-notifications-using-a-bot)
-- [Video of running tests](#-test-running-example-in-selenoid)
+- [Integration with Allure TestOps](#integration-with-allure-testops)
+- [Integration with Jira](#integration-with-jira)
+- [Integration with Telegram](#telegram-notifications-using-a-bot)
+- [Video of running tests](#test-running-example-in-selenoid)
 
 ## Stack of technologies
 
@@ -137,3 +137,7 @@ From <code><strong>Jenkins</strong></code> it is possible to switch to reports g
 <div style="text-align: center;">
   <img src="media/screens/Allure_behaviors.png" alt="allure5" width="800">
 </div>
+
+//to do
+
+[Back to top](#content)
