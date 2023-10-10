@@ -1,7 +1,9 @@
 package com.jsd.letterboxd.helpers;
 
 import com.codeborne.selenide.Selenide;
+import com.jsd.letterboxd.config.WebDriverConfig;
 import io.qameta.allure.Attachment;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -14,6 +16,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attachments {
+
+    static WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
@@ -45,7 +49,7 @@ public class Attachments {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId() + ".mp4";
+        String videoUrl = "https://" + Attachments.config.getRemoteUrl() + "/video/" + sessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
