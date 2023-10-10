@@ -49,10 +49,21 @@ ensuring smooth test execution across various environments
 - **Efficient Configuration Management**: Leveraging the `Owner` library to manage application configurations via 
 Java properties files, ensuring adaptability and streamlined configuration management
 
+[Back to top](#content)
+
+----
 ## List of UI Tests
 
-//to do
+- Login test
+- Incorrect password test
+- Logout test
+- Shopping Cart counter test
+- Sorting inventory test
+- Shopping Cart test
 
+[Back to top](#content)
+
+----
 ## Executing tests through the command line
 
 To run tests through the command line using Gradle, you can use the following commands:
@@ -73,6 +84,9 @@ You can pass system properties to your tests during Gradle execution by utilizin
 property name (`env` in this instance) and its associated value (`local` or `remote`). Subsequently, the tests can 
 access these properties to customize their execution behavior according to the designated environment.
 
+[Back to top](#content)
+
+----
 ## Property files
 
 Possible properties in `${env}.properties` file:
@@ -98,6 +112,9 @@ password.selenoid=
 
 You must customize the `auth.properties` files locally to align them with your credentials for remote Selenoid access.
 
+[Back to top](#content)
+
+----
 ## Running tests in [Jenkins](https://jenkins.autotests.cloud/job/018-JonSnowDies-final/)
 
 To execute the tests in Jenkins, use the following command:
@@ -127,6 +144,9 @@ Main page of the build:
   <img src="media/screens/Jenkins_main_02.gif" alt="Jenkins" width="800">
 </div>
 
+[Back to top](#content)
+
+----
 ##  Test results report in [Allure Report](https://jenkins.autotests.cloud/job/018-JonSnowDies-final/22/allure)
 
 <code><strong>Allure Report</strong></code> overview page:
@@ -140,6 +160,9 @@ Main page of the build:
   <img src="media/screens/Allure_behaviors.png" alt="allure5" width="800">
 </div>
 
+[Back to top](#content)
+
+----
 ## [Allure TestOps](https://allure.autotests.cloud/launch/30785) integration
 
 <code><strong>Allure TestOps</strong></code> dashboard page:
@@ -152,12 +175,18 @@ Main page of the build:
   <img src="media/screens/AllureTestOps_Cases.png" alt="allure5" width="800">
 </div>
 
+[Back to top](#content)
+
+----
 ## [Jira](https://jira.autotests.cloud/browse/HOMEWORK-708) integration
 
 <div style="text-align: center;">
   <img src="media/screens/Jira.png" alt="jira-project" width="800">
 </div>
 
+[Back to top](#content)
+
+----
 ## Telegram notifications
 
 After passing the tests, a report can be sent to <code>Telegram</code> messenger.
@@ -166,12 +195,15 @@ After passing the tests, a report can be sent to <code>Telegram</code> messenger
     <img title="Telegram Notifications" src="media/screens/Telegram.png" width="500" alt="Screenshot of Telegram Notifications">
 </div>
 
+[Back to top](#content)
+
+----
 ## Video example of passing the test in Selenoid
 
 Each test in the Allure Report has a video attached.
 
 <div style="text-align: center;">
-  <img title="Selenoid Video" src="media/videos/Selenoid.gif" alt="Selenoid Video demonstrating its usage">
+  <img title="Selenoid Video" src="media/screens/Selenoid.gif" alt="Selenoid Video demonstrating its usage">
 </div>
 
 [Back to top](#content)
