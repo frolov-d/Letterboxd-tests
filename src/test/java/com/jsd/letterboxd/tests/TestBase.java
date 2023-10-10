@@ -44,5 +44,6 @@ public class TestBase {
         executeJavaScript("window.localStorage.clear();");
         executeJavaScript("window.sessionStorage.clear();");
         Selenide.refresh();
+        Selenide.closeWebDriver();
     }
 }
