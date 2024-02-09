@@ -1,9 +1,7 @@
 package com.jsd.letterboxd.tests;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.jsd.letterboxd.config.WebDriverProvider;
-import com.jsd.letterboxd.helpers.Attachments;
 import com.jsd.letterboxd.pages.InventoryPage;
 import com.jsd.letterboxd.pages.LoginPage;
 import com.jsd.letterboxd.pages.ShoppingCartPage;
@@ -12,7 +10,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static com.codeborne.selenide.Selenide.*;
+import static com.jsd.letterboxd.helpers.Attachments.*;
 
 public class TestBase {
 
@@ -32,18 +31,18 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-        Attachments.screenshotAs("Last screenshot");
-        Attachments.pageSource();
-        Attachments.browserConsoleLogs();
-        Attachments.addVideo();
+        screenshotAs("Last screenshot");
+        pageSource();
+        browserConsoleLogs();
+        addVideo();
     }
 
     @AfterEach
     void clearCookies() {
-        Selenide.clearBrowserCookies();
+        clearBrowserCookies();
         executeJavaScript("window.localStorage.clear();");
         executeJavaScript("window.sessionStorage.clear();");
-        Selenide.refresh();
-        Selenide.closeWebDriver();
+        refresh();
+        closeWebDriver();
     }
 }
