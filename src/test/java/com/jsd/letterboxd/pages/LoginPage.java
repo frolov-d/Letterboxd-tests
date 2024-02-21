@@ -11,6 +11,7 @@ import static io.qameta.allure.Allure.step;
 
 public class LoginPage {
 
+    private static final String SWAG_LABS = "Swag Labs";
     private SelenideElement usernameField = $("#user-name");
     private SelenideElement passwordField = $("#password");
     private SelenideElement loginButton = $("#login-button");
@@ -34,7 +35,7 @@ public class LoginPage {
 
     @Step("Verifying valid logging in")
     public void loginVerifying(){
-        headerLabel.shouldHave(text("Swag Labs"));
+        headerLabel.shouldHave(text(SWAG_LABS));
     }
 
     @Step("Logging out")
@@ -45,7 +46,7 @@ public class LoginPage {
 
     @Step("Verifying logout")
     public void logoutVerifying() {
-        loginLogo.shouldHave(text("Swag Labs"));
+        loginLogo.shouldHave(text(SWAG_LABS));
         loginButton.shouldBe(visible);
     }
 

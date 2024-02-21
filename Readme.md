@@ -1,7 +1,7 @@
 ## Automated tests for demo site [Swag Labs](https://www.saucedemo.com/) – Swag Labs
 
 <p>
-  <img src="media/icons/Swaglabs.png" alt="Swag Labs logo">
+  <img src="media/screens/Swaglabs.png" alt="Swag Labs logo">
 </p>
 
 ## Content
@@ -178,7 +178,7 @@ Main page of the build:
 [Back to top](#content)
 
 ----
-## [Jira](https://jira.autotests.cloud/browse/HOMEWORK-708) integration
+## [Jira](https://jira.autotests.cloud/browse/HOMEWORK-909) integration
 
 <div style="text-align: center;">
   <img src="media/screens/Jira.png" alt="jira-project" width="800">
